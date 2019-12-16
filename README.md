@@ -1,7 +1,8 @@
 # aws-lambda-monitor-sqs-slack
 AWS Lambda function to monitor SQS queue to a Slack channel
 
-<img width="200" src="https://github.com/Ismail-AlJubbah/aws-lambda-monitor-sqs-slack/raw/master/imgs/sqs.png"/>   <img width="100" src="https://github.com/Ismail-AlJubbah/aws-lambda-monitor-sqs-slack/raw/master/imgs/arrow.png"/>  <img width="200" src="https://github.com/Ismail-AlJubbah/aws-lambda-monitor-sqs-slack/raw/master/imgs/lambda.png"/>   <img width="100" src="https://github.com/Ismail-AlJubbah/aws-lambda-monitor-sqs-slack/raw/master/imgs/arrow.png"/>   <img width="200" src="https://github.com/Ismail-AlJubbah/aws-lambda-monitor-sqs-slack/raw/master/imgs/slack.png"/>
+<img width="100" src="https://github.com/Babug01/AWS-SQS-Project/blob/master/imgs/sqs.png"/>  <img width="100" src="https://github.com/Babug01/AWS-SQS-Project/blob/master/imgs/sqs.png"/>  <img width="100" src="https://github.com/Babug01/AWS-SQS-Project/blob/master/imgs/lambda.png"/>  <img width="100" src="https://github.com/Babug01/AWS-SQS-Project/blob/master/imgs/arrow.png"/>  
+<img width="100" src="https://github.com/Babug01/AWS-SQS-Project/blob/master/imgs/slack.png"/>
 
 # Problem:
 
@@ -11,20 +12,20 @@ As a DevOps team we would like to monitor these queues by providing an automatio
 
 # Use case:
 Team 1 queues:
-test_devops_makelaars
-test_devops_makelaars_errors
+-test_devops_makelaars
+-test_devops_makelaars_errors
 Team 2 queues:
-test_devops_new_houses
-test_devops_new_houses_errors
-test_devops_edited_houses
-test_devops_edited_houses_errors
-test_devops_removed_houses
-test_devops_removed_houses_errors
+-test_devops_new_houses
+-test_devops_new_houses_errors
+-test_devops_edited_houses
+-test_devops_edited_houses_errors
+-test_devops_removed_houses
+-test_devops_removed_houses_errors
 Team 3 queues:
-test_devops_stats_phone_clicks
-test_devops_stats_phone_clicks_errors
-test_devops_stats_facebook_clicks
-test_devops_stats_facebook_clicks_errors
+-test_devops_stats_phone_clicks
+-test_devops_stats_phone_clicks_errors
+-test_devops_stats_facebook_clicks
+-test_devops_stats_facebook_clicks_errors
 
 # Solution
 Most of the people preferred Slack as a communication platform between teams, sending a notification to a team Slack channel is a good way to integrate between the alarting system and team comunication.
@@ -74,8 +75,7 @@ Setup steps:
 Click Next, select `Attach exisiting policies directly`, search for `sqs`, then select `AmazonSQSFullAccess`, this will allow this user to access the queues.Click Next, copy the Access Key ID and Secret access key, we gonna use them in AWS Lambda function.
 
 ### Third, Add the keys to Lambda:
-1. Clone or Download this repo, open `index.js`, on top of the file you need to edit the variables of Slack Webhook URL and AWS keys:
-<img width="900" src="https://github.com/Ismail-AlJubbah/aws-lambda-monitor-sqs-slack/raw/master/imgs/s3-1.png"/>
+1. Clone or Download this repo, open `index.js`, on top of the file you need to edit the variables of Slack Webhook URL and AWS keys.
 
 ### Fourth, Create and Deploy AWS Lambda function:
 1. On AWS Console, select a region, go to Lambda, click on `Author from scratch'.Name the function `Aws-sqs-queue-slack`, select `Choose an existing role` on Role, and `service-role/sqspoller` for Existing role, then hit `Create function`.
@@ -85,6 +85,6 @@ Click Next, select `Attach exisiting policies directly`, search for `sqs`, then 
 3. Back to AWS console, on `Code entry type`, select `Upload a .ZIP file`, select the ZIP file from your machine. On `Triggers`, click, `Add trigger`. On `Rule`, select `Create a new rule`, for `Rule name` type `everymin`, for `Rule type` choose `Schedule expression`, type `rate(1 minute)`, then click `Submit` and Click `Save`.
 
 ### Test:
-You can test using AWS Console or AWS CLI, I will show you how to test using the CLI:
+You can test using AWS Console or AWS CLI
 
 ## Nice!!
