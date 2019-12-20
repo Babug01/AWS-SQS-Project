@@ -4,9 +4,9 @@ var SLACK_CONFIG = {
 		   "team3":"/services/TRFAXNXUH/BRTRNRL5U/oiPXmKLfqAguMOp59bfqrJon"},
 	username: "SQS-Queue-Monitor"
 };
-const aws_account_id = "223381404055";
-const aws_accessKeyId = "AKIAJC22Y45HZZNEVEVQ";
-const aws_secretAccessKey = "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";
+const aws_account_id = "223381430055";
+const aws_accessKeyId = "AKIAJC22Y45HZZNEYQWSA";
+const aws_secretAccessKey = "PMh8q0aI7xR7Y81obZfr1qMOVNaFoN35b+9krghu92";
 const aws_region = "eu-west-1";
 var sqs_webfile = "https://github.com/Babug01/AWS-SQS-Project/blob/master/queues.yaml";
 //#######################################################
